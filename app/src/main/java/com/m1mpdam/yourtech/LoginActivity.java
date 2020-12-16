@@ -4,16 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
     EditText edtEmail, edtPwd;
     Button btnLogin;
+    boolean isEmailValid, isPasswordValid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +39,41 @@ public class LoginActivity extends AppCompatActivity {
         String edt_email = edtEmail.getText().toString();
         String edt_pwd = edtPwd.getText().toString();
 
-        if (edt_email.length() > 0) {
-            SharedPreferences sharedPref = getSharedPreferences(Constants.MY_PREFS, Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putBoolean(Constants.PREF_IS_CONNECTED, true);
-            editor.apply();
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
+        // Check for a valid Email
+        if (edt_email.isEmpty()) {
+            edtEmail.setError("Please enter your Email.");
+            isEmailValid = false;
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(edt_email).matches()) {
+            edtEmail.setError("enter a valid Email");
+            isEmailValid = false;
         } else {
-            Toast.makeText(getApplicationContext(), "Please enter your Email.", Toast.LENGTH_LONG).show();
+            isEmailValid = true;
         }
+
+        // Check for a valid Password
+        if (edt_pwd.isEmpty()) {
+            edtPwd.setError("Please enter your Password.");
+            isPasswordValid = false;
+        } else if (edt_pwd.length() < 6) {
+            edtPwd.setError("At Least 6 caracters.");
+            isPasswordValid = false;
+        } else {
+            isPasswordValid = true;
+        }
+
+        // If Email and Password are Valid.
+        if (isEmailValid && isPasswordValid) {
+            successLogin();
+        }
+    }
+
+    private void successLogin() {
+        SharedPreferences sharedPref = getSharedPreferences(Constants.MY_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean(Constants.PREF_IS_CONNECTED, true);
+        editor.apply();
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 
 }
