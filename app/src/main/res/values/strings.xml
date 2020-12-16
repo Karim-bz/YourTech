@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">YourTech</string>
+
+    <string-array name="laptops">
+        <item>MacBook Pro </item>
+        <item>MSI G63</item>
+        <item>HP Omen 15</item>
+        <item>HP 2000</item>
+        <item>Dell Inspiron 5050</item>
+    </string-array>
+    <string-array name="description">
+        <item>MacBook Pro 2020 description</item>
+        <item>MSI G63 description</item>
+        <item>HP Omen 15 description</item>
+        <item>HP 2000 description</item>
+        <item>Dell Inspiron 5050 description</item>
+    </string-array>
 </resources>
