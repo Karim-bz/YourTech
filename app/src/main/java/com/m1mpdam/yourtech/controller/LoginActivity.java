@@ -11,7 +11,6 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.m1mpdam.yourtech.Constants;
 import com.m1mpdam.yourtech.R;
 
 public class LoginActivity extends AppCompatActivity {

@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.m1mpdam.yourtech.Constants;
+
 import com.m1mpdam.yourtech.utils.MyAdapter;
 import com.m1mpdam.yourtech.R;
 

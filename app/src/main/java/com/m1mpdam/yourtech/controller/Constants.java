@@ -1,4 +1,4 @@
-package com.m1mpdam.yourtech.global;
+package com.m1mpdam.yourtech.controller;
 
 public class Constants {
     public final static long SPLASH_DELAY = 2 * 1000;

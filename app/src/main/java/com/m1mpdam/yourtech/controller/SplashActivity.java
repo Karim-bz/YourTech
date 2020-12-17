@@ -1,14 +1,13 @@
 package com.m1mpdam.yourtech.controller;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.m1mpdam.yourtech.Constants;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.m1mpdam.yourtech.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -29,12 +28,11 @@ public class SplashActivity extends AppCompatActivity {
 
     private void openNextScreen() {
         SharedPreferences sharedPref = getSharedPreferences(Constants.MY_PREFS, Context.MODE_PRIVATE);
-        boolean is_connected = sharedPref.getBoolean(Constants.PREF_IS_CONNECTED,false);
-        if (is_connected){
-            startActivity(new Intent(SplashActivity.this,MainActivity.class));
-        }
-        else{
-            startActivity(new Intent(SplashActivity.this,LoginActivity.class));
+        boolean is_connected = sharedPref.getBoolean(Constants.PREF_IS_CONNECTED, false);
+        if (is_connected) {
+            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+        } else {
+            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
         }
     }
 }
