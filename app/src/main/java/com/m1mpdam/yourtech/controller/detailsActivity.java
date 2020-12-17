@@ -1,4 +1,4 @@
-package com.m1mpdam.yourtech;
+package com.m1mpdam.yourtech.controller;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -6,6 +6,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.m1mpdam.yourtech.R;
 
 public class detailsActivity extends AppCompatActivity {
 

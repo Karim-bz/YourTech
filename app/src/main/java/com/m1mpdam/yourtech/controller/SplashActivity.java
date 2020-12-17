@@ -1,4 +1,4 @@
-package com.m1mpdam.yourtech;
+package com.m1mpdam.yourtech.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.m1mpdam.yourtech.Constants;
+import com.m1mpdam.yourtech.R;
 
 public class SplashActivity extends AppCompatActivity {
 

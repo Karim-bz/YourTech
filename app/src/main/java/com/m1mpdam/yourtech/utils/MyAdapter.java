@@ -1,4 +1,4 @@
-package com.m1mpdam.yourtech;
+package com.m1mpdam.yourtech.utils;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.m1mpdam.yourtech.R;
+import com.m1mpdam.yourtech.controller.detailsActivity;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
