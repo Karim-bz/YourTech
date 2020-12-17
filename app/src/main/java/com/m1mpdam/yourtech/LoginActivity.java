@@ -1,6 +1,8 @@
 package com.m1mpdam.yourtech;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -66,10 +68,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void successLogin() {
-        //SharedPreferences sharedPref = getSharedPreferences(Constants.MY_PREFS, Context.MODE_PRIVATE);
-        //SharedPreferences.Editor editor = sharedPref.edit();
-        //editor.putBoolean(Constants.PREF_IS_CONNECTED, true);
-        //editor.apply();
+        SharedPreferences sharedPref = getSharedPreferences(Constants.MY_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean(Constants.PREF_IS_CONNECTED, true);
+        editor.apply();
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }
