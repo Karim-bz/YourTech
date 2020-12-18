@@ -11,9 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.m1mpdam.yourtech.utils.MyAdapter;
 import com.m1mpdam.yourtech.R;
+import com.m1mpdam.yourtech.utils.MyAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        //LogOut Button
         btnLogout = findViewById(R.id.logoutBtn);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
